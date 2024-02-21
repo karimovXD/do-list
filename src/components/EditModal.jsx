@@ -21,19 +21,19 @@ function EditModal({ editList, task }) {
   }
 
   return (
-    <form action="" className='text-center w-full h-auto py-5 px-1 lg:text-left' onSubmit={handleSubmit}>
+    <form action="" className='text-center w-full h-auto py-1 px-1 lg:text-left border-2 shadow-lg rounded-md' onSubmit={handleSubmit}>
 
       <textarea
         name=""
         id=""
         value={textValue}
         placeholder='Edit your plan'
-        className='w-full border p-2'
+        className='w-full border p-2 rounded-md'
         onChange={e => { setTextValue(e.target.value) }
         }>
       </textarea >
       <Select
-        className="w-full rounded mb-7"
+        className="w-full rounded mb-5"
         id='select'
         options={options}
         placeholder="Do your plan"

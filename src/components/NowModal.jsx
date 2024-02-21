@@ -1,6 +1,5 @@
-import { useState, useRef } from "react"
+import React from "react"
 import EditModal from "./EditModal"
-
 
 function NowModal({ nowList, deleteFunc, editFunc, editList }) {
     return (
@@ -14,22 +13,22 @@ function NowModal({ nowList, deleteFunc, editFunc, editList }) {
                             item.isEditing ? (
                                 <EditModal editList={editList} task={item} key={i} />
                             ) : (
-                                <div key={i} className='w-auto h-auto mb-4'>
-                                    <div className='p-2 mb-2 border'>
+                                <div key={i} className='w-auto h-auto mb-4 border-2 border-wite p-2 shadow-lg rounded-md'>
+                                    <div className='mb-3 border-b-2 border-light pb-3'>
                                         <p>{item.title}</p>
                                     </div>
                                     <ul className='flex items-center justify-between'>
                                         <li>
                                             <button
-                                                className='py-1 px-2 border text-green-400 border-green-400 hover:text-green-600 hover:border-green-600'
-                                                onClick={() => item.completed = true}
+                                                className='py-1 px-2 border text-green-400 border-green-400 hover:text-green-600 hover:border-green-600 rounded-md shadow-md'
+                                                onClick={() => console.log(item)}
                                             >
                                                 <i className="fa-solid fa-check"></i>
                                             </button>
                                         </li>
                                         <li>
                                             <button
-                                                className='py-1 px-2 border border-yellow-400 text-yellow-400 hover:text-yellow-600 hover:border-yellow-600'
+                                                className='py-1 px-2 border border-yellow-400 text-yellow-400 hover:text-yellow-600 hover:border-yellow-600 rounded-md shadow-md'
                                                 onClick={() => editFunc(item.id)}
                                             >
                                                 <i className="fa-solid fa-pen-to-square"></i>
@@ -37,7 +36,7 @@ function NowModal({ nowList, deleteFunc, editFunc, editList }) {
                                         </li>
                                         <li>
                                             <button
-                                                className='py-1 px-2 border border-red text-red hover:text-purple-950 hover:border-purple-950'
+                                                className='py-1 px-2 border border-red text-red hover:text-purple-950 hover:border-purple-950 rounded-md shadow-md'
                                                 onClick={() => deleteFunc(item.id)}>
                                                 <i className="fa-solid fa-trash-can"></i>
                                             </button>

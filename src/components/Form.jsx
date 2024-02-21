@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Select from 'react-select'
 
-
+//component
 function Form({ addList }) {
   const [textValue, setTextValue] = useState('');
   const [filterValue, setFilterValue] = useState('');
@@ -27,17 +27,17 @@ function Form({ addList }) {
           id=""
           value={textValue}
           placeholder='write your plan'
-          className='w-full h-52 border mb-5 p-2'
+          className='w-full h-52 border mb-5 p-2 shadow-lg'
           onChange={e => { setTextValue(e.target.value) }}>
         </textarea>
         <Select
-          className="w-full rounded mb-7"
+          className="w-full rounded mb-7 shadow-lg"
           id='select'
           options={options}
           placeholder="Do your plan"
           onChange={e => setFilterValue(e.value)}
         />
-        <button type='submit' className='border-2 w-full h-10 hover:border-blue-600'>ADD</button>
+        <button type='submit' className='border-2 w-full h-10 hover:border-blue-600 shadow-lg'>ADD</button>
       </form>
     </>
   )

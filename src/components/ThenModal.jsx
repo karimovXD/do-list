@@ -9,14 +9,13 @@ function ThenModal({ thenList, deleteFunc, editFunc, editList }) {
             {
                 thenList.map((item, i) => {
                     if (item.when === 'now' || item.title.trim() === '' || item.when === '') {
-                        console.log('err');
                     } else {
                         return (
                             item.isEditing ? (
                                 <EditModal editList={editList} task={item} key={i} />
                             ) : (
-                                <div key={i} className='w-auto h-auto mb-4'>
-                                    <div className='p-2 mb-2 border'>
+                                <div key={i} className='w-auto h-auto mb-4 border-2 border-wite p-2 shadow-lg rounded-md'>
+                                    <div className='mb-3 border-b-2 border-light pb-3'>
                                         <p>{item.title}</p>
                                     </div>
                                     <ul className='flex items-center justify-between'>
